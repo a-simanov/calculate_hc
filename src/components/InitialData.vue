@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Расчет системы</h2>
         <form @submit.prevent="calculate">
             <div class="data">
                 <fieldset>
@@ -18,12 +19,6 @@
         </form>
         <div class="data data_final">
             <p>Результат:</p>
-            <p>Расчетный расход: {{ expenditure }}</p>
-            <p>Крутящий мемент: {{ torque }}</p>
-            <p>Мощность: {{ power }}</p>
-        </div>
-        <div class="data data_final">
-            <p>Параметры гидроцилиндра:</p>
             <p>Расчетный расход: {{ expenditure }}</p>
             <p>Крутящий мемент: {{ torque }}</p>
             <p>Мощность: {{ power }}</p>
@@ -61,8 +56,5 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .data_final {
-        border: 1px solid black;
     }
 </style>

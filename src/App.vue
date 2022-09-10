@@ -1,18 +1,19 @@
 <template>
   <div class="component">
-    <h1>Расчёт гидроцилиндра.</h1>
     <initial-data @calculate-data="'calculateData'"></initial-data>
-    <final-data></final-data>
+    <hydro-cilinder></hydro-cilinder>
   </div>
 </template>
 
 <script>
 import InitialData from './components/InitialData.vue'
+import HydroCilinder from './components/HydroCilinder.vue'
 
 export default {
   name: 'App',
   components: {
-    InitialData
+    InitialData,
+    HydroCilinder
   }
 }
 </script>
