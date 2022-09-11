@@ -48,11 +48,3 @@ export default {
     }  
 }
 </script>
-
-<style scoped>
-    .data fieldset {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-</style>
