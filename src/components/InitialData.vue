@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Расчет системы</h2>
-        <form @submit.prevent="calculate">
+        <div>
             <div class="data">
                 <fieldset>
                     <legend>Исходные данные</legend>
@@ -13,15 +13,9 @@
                     <input type="text" id="rotation" v-model="rotation">
                     <label for="efficiency">КПД: </label>
                     <input type="text" id="efficiency" v-model="efficiency">
-                    <button class="btn" >Рассчитать</button>
+                    <button class="btn" @click="calculateSystem">Рассчитать</button>
                 </fieldset>
             </div>
-        </form>
-        <div class="data data_final">
-            <p>Результат:</p>
-            <p>Расчетный расход: {{ expenditure }}</p>
-            <p>Крутящий мемент: {{ torque }}</p>
-            <p>Мощность: {{ power }}</p>
         </div>
     </div>
     
@@ -30,24 +24,28 @@
 <script>
 
 export default {
+    emits: ['calculate'],
     data () {
         return {
             displacement: 0,
             pressure: 0,
             rotation: 0,
             efficiency: 0.9,
-            expenditure: 0,
-            torque: 0,
-            power: 0
+            calcData: {
+                torque: 0,
+                power: 0,
+                expenditure: 0
+            }
         }
     },
     methods: {
-        calculate () {
-            this.expenditure = this.displacement * this.rotation * this.efficiency / 1000
-            this.torque = this.displacement * this.pressure / 62
-            this.power = this.expenditure * this.pressure / 600
+        calculateSystem () {
+            this.calcData.torque = this.displacement * this.pressure / 62
+            this.calcData.expenditure = this.displacement * this.rotation * this.efficiency / 1000
+            this.calcData.power =  this.calcData.expenditure * this.pressure / 600            
+            this.$emit('calculate', this.calcData)
         }
-    }
+    }  
 }
 </script>
 
