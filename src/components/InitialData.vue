@@ -1,7 +1,6 @@
 <template>
     <div>
         <h2>Расчет системы</h2>
-        <div>
             <div class="data">
                 <fieldset>
                     <legend>Исходные данные</legend>
@@ -16,15 +15,13 @@
                     <button class="btn" @click="calculateSystem">Рассчитать</button>
                 </fieldset>
             </div>
-        </div>
-    </div>
-    
+    </div>    
 </template>
 
 <script>
 
 export default {
-    emits: ['calculate'],
+    emits: ['calculateHS'],
     data () {
         return {
             displacement: 0,
@@ -43,7 +40,7 @@ export default {
             this.calcData.torque = this.displacement * this.pressure / 62
             this.calcData.expenditure = this.displacement * this.rotation * this.efficiency / 1000
             this.calcData.power =  this.calcData.expenditure * this.pressure / 600            
-            this.$emit('calculate', this.calcData)
+            this.$emit('calculateHS', this.calcData)
         }
     }  
 }
