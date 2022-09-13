@@ -4,13 +4,14 @@
         <div class="data">
             <fieldset>
                 <legend>Исходные данные</legend>
-                <label for="pressure">Давление в системе: </label>
+                <label for="pressure">Давление в системе, бар: </label>
                 <input type="text" id="pressure" v-model="pressure">
-                <label for="plungerDiametr">Диаметр поршня: </label>
+                <p v-if="typeof(this.pressure) !== 'number'">Введите число</p>
+                <label for="plungerDiametr">Диаметр поршня, мм<sup>2</sup>: </label>
                 <input type="text" id="plungerDiametr" v-model="plungerDiametr">
-                <label for="workLength">Длина хода: </label>
+                <label for="workLength">Длина хода, мм: </label>
                 <input type="text" id="workLength" v-model="workLength">                    
-                <label for="stockDiametr">Диаметр штока: </label>
+                <label for="stockDiametr">Диаметр штока, мм<sup>2</sup>: </label>
                 <input type="text" id="stockDiametr" v-model="stockDiametr">
                 <button class="btn" @click="calculateHC">Рассчитать</button>
             </fieldset>

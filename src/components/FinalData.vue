@@ -1,9 +1,9 @@
 <template>
     <div class="data data_final">
         <p>Результат:</p>
-        <p>Расчетный расход: {{ finalData.expenditure }}</p>
-        <p>Крутящий момент: {{ finalData.torque }}</p>
-        <p>Мощность: {{ finalData.power }}</p>
+        <p>Расчетный расход: {{ finalData.expenditure }}, л/мин</p>
+        <p>Крутящий момент: {{ finalData.torque }}, Нм</p>
+        <p>Мощность: {{ finalData.power }}, кВт</p>
     </div>
 </template>
 

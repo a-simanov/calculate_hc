@@ -20,8 +20,10 @@ a {
 }
 
 input {
-    border: none;
+    border: 1px solid gray;
+    border-radius: 5px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 button {
@@ -65,4 +67,8 @@ body {
 
 h2 {
   margin-top: 50px;
+}
+
+sup {
+  font-size: 12px;
 }

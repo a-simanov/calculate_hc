@@ -4,11 +4,11 @@
             <div class="data">
                 <fieldset>
                     <legend>Исходные данные</legend>
-                    <label for="displacement">Рабочий объём насоса: </label>
+                    <label for="displacement">Рабочий объём насоса, мм<sup>3</sup>: </label>
                     <input type="text" id="displacement" v-model="displacement">
-                    <label for="pressure">Давление в системе: </label>
+                    <label for="pressure">Давление в системе, бар: </label>
                     <input type="text" id="pressure" v-model="pressure">
-                    <label for="rotation">Частота вращения: </label>
+                    <label for="rotation">Частота вращения, мин<sup>-1</sup>: </label>
                     <input type="text" id="rotation" v-model="rotation">
                     <label for="efficiency">КПД: </label>
                     <input type="text" id="efficiency" v-model="efficiency">
