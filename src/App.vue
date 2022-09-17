@@ -1,9 +1,9 @@
 <template>
   <div class="component">
     <initial-data @calculateHS="calculateHS"></initial-data>
-    <final-data :finalData="finalData"></final-data>
+    <final-data :finalData="finalData" v-if="systemVisibility"></final-data>
     <hydro-cilinder @calculateHC="calculateHC" :finalData="finalData"></hydro-cilinder>
-    <final-HC :finalHC="finalHC"></final-HC>
+    <final-HC :finalHC="finalHC" v-if="cilinderVisibility"></final-HC>
   </div>
 </template>
 
@@ -20,15 +20,17 @@ export default {
       finalData: {
         torque: 0,
         power: 0,
-        expenditure: 0
+        expenditure: 0,
       },
       finalHC: {
         valuePlunger: 0,
         valueStock: 0,
         workingTime: 0,
         emptyTime: 0,
-        force: 0
-      }
+        force: 0,
+      },
+      systemVisibility: false,
+      cilinderVisibility: false
     }
   },
   components: {
@@ -40,9 +42,11 @@ export default {
   methods: {
     calculateHS (data) {      
       this.finalData = data
+      this.systemVisibility = true
     },
     calculateHC (data) {      
       this.finalHC = data
+      this.cilinderVisibility = true
     }
   }
 }

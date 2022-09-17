@@ -27,7 +27,10 @@ input {
 }
 
 button {
-    border: none;
+    border: 2px solid rgb(150, 218, 62);
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: rgb(230, 236, 193);
 }
 
 body {
@@ -66,9 +69,14 @@ body {
 }
 
 h2 {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 sup {
   font-size: 12px;
+}
+
+legend {
+  font-weight: 700;
+  margin: 25px 0;
 }

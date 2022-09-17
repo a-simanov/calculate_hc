@@ -6,7 +6,7 @@
                 <legend>Исходные данные</legend>
                 <label for="pressure">Давление в системе, бар: </label>
                 <input type="text" id="pressure" v-model="pressure">
-                <p v-if="typeof(this.pressure) !== 'number'">Введите число</p>
+                <!-- <p v-if="typeof(this.pressure) !== 'number'">Введите число</p> -->
                 <label for="plungerDiametr">Диаметр поршня, мм<sup>2</sup>: </label>
                 <input type="text" id="plungerDiametr" v-model="plungerDiametr">
                 <label for="workLength">Длина хода, мм: </label>
