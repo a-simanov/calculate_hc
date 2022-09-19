@@ -3,16 +3,19 @@
         <h2>Расчет гидроцилиндра</h2>        
         <div class="data">
             <fieldset>
-                <legend>Исходные данные</legend>
+                <legend>Исходные данные:</legend>
                 <label for="pressure">Давление в системе, бар: </label>
-                <input type="text" id="pressure" v-model="pressure">
-                <!-- <p v-if="typeof(this.pressure) !== 'number'">Введите число</p> -->
+                <input type="text" id="pressure" v-model.number="pressure">
+                <span class="error" v-if="typeof(this.pressure) !== 'number'">Введите число</span>
                 <label for="plungerDiametr">Диаметр поршня, мм<sup>2</sup>: </label>
-                <input type="text" id="plungerDiametr" v-model="plungerDiametr">
+                <input type="text" id="plungerDiametr" v-model.number="plungerDiametr">
+                <span class="error" v-if="typeof(this.plungerDiametr) !== 'number'">Введите число</span>
                 <label for="workLength">Длина хода, мм: </label>
-                <input type="text" id="workLength" v-model="workLength">                    
+                <input type="text" id="workLength" v-model.number="workLength">
+                <span class="error" v-if="typeof(this.workLength) !== 'number'">Введите число</span>                    
                 <label for="stockDiametr">Диаметр штока, мм<sup>2</sup>: </label>
-                <input type="text" id="stockDiametr" v-model="stockDiametr">
+                <input type="text" id="stockDiametr" v-model.number="stockDiametr">
+                <span class="error" v-if="typeof(this.stockDiametr) !== 'number'">Введите число</span>
                 <button class="btn" @click="calculateHC">Рассчитать</button>
             </fieldset>
         </div>        

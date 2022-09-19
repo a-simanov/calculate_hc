@@ -1,17 +1,21 @@
 <template>
     <div>
-        <h2>Расчет системы</h2>
+        <h2>Расчет гидросистемы</h2>
             <div class="data">
                 <fieldset>
-                    <legend>Исходные данные</legend>
+                    <legend>Исходные данные:</legend>
                     <label for="displacement">Рабочий объём насоса, мм<sup>3</sup>: </label>
-                    <input type="text" id="displacement" v-model="displacement">
+                    <input type="text" id="displacement" v-model.number="displacement">
+                    <span class="error" v-if="typeof(this.displacement) !== 'number'">Введите число</span>
                     <label for="pressure">Давление в системе, бар: </label>
-                    <input type="text" id="pressure" v-model="pressure">
+                    <input type="text" id="pressure" v-model.number="pressure">
+                    <span class="error" v-if="typeof(this.pressure) !== 'number'">Введите число</span>
                     <label for="rotation">Частота вращения, мин<sup>-1</sup>: </label>
-                    <input type="text" id="rotation" v-model="rotation">
+                    <input type="text" id="rotation" v-model.number="rotation">
+                    <span class="error" v-if="typeof(this.rotation) !== 'number'">Введите число</span>
                     <label for="efficiency">КПД: </label>
-                    <input type="text" id="efficiency" v-model="efficiency">
+                    <input type="text" id="efficiency" v-model.number="efficiency">
+                    <span class="error" v-if="typeof(this.efficiency) !== 'number'">Введите число</span>
                     <button class="btn" @click="calculateSystem">Рассчитать</button>
                 </fieldset>
             </div>
