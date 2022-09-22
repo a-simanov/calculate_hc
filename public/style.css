@@ -33,6 +33,22 @@ button {
     background-color: rgb(230, 236, 193);
 }
 
+.btnToggle {
+  margin-top: 25px;
+  margin-left: 25px;
+  background-color: rgb(200, 204, 223);
+}
+
+.btnToggle_right {
+ margin-left: auto;
+ margin-right: 25px;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: start;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -55,7 +71,6 @@ body {
 }
 
 .component {
-  
   margin: 0 auto;
   padding: 25px 0 25px 0;
   background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614343040_39-p-neitralnii-svetlii-fon-42.jpg);

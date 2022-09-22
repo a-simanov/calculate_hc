@@ -28,6 +28,7 @@ export default {
     emits: ['calculateHC'],
     data () {
         return {
+            word: 'Слово',
             pressure: 0,
             plungerDiametr: 0,
             workLength: 0,
